@@ -1,10 +1,10 @@
 var assert = {
-    isTrue: function(testNote) {
-        if(!testNote) {
-            throw new Error("Asserstion failed: " + testNote + " is not truthy");
+    isTrue: function(teststoringnotes) {
+        if(!teststoringnotes) {
+            throw new Error("Asserstion failed: " + teststoringnotes + " is not truthy");
 
         
         }
-        else console.log(testNote + " is truthy!");
+        else console.log(teststoringnotes + " is truthy!");
     }
 };
