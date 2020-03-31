@@ -4,12 +4,7 @@
     };
 
     NoteListView.prototype.show = function() {
-        var viewHTML = "<ul>"
-        // this.list.notes.forEach(function() {
-            viewHTML += '<li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li>'
-        // })
-        viewHTML += "</ul>"
-        return viewHTML;
+       return "<ul><li><div>" + this.list.notes.map(note => note.text).join("</div></li><li><div>")+ "</div></li></ul>"
     };
 
     exports.NoteListView = NoteListView;

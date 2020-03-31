@@ -33,10 +33,11 @@ testSingleNoteView()
 
 function testNoteListView() {
   var list = new Notelist();
-  // list.addnote("Favourite food: pesto")
-  // list.addnote("Favourite drink: seltzer")
+  var note1 = new Note("Favourite food: pesto");
+  var note2 = new Note("Favourite drink: seltzer")
+  list.addnote(note1)
+  list.addnote(note2)
   var view = new NoteListView(list)
-  console.log(view.show())
   assert.isTrue(view.show() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
 }
 
