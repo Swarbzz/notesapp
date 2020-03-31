@@ -14,19 +14,10 @@ function testaddnote() {
 
 testaddnote()
 
-function teststoringnotes() {
-  var list = new Notelist();
-  list.addnote("Hello there - Obiwan")
-  list.addnote("General Kenobi! - General Grevious")
-  assert.isTrue(list.notes[0] === "Hello there - Obiwan")
-  assert.isTrue(list.notes[1] === "General Kenobi! - General Grevious")
-}
-
-teststoringnotes()
 
 function testSingleNoteView() {
   var singlenoteview = new SingleNoteView(new Note("My favourtie drink is cola"))
-  assert.isTrue(singlenoteview.display() === "My favourtie drink is cola")
+  assert.isTrue(singlenoteview.display() === "<div>My favourtie drink is cola</div>")
 }
 
 testSingleNoteView()
@@ -38,8 +29,20 @@ function testNoteListView() {
   list.addnote(note1)
   list.addnote(note2)
   var view = new NoteListView(list)
-  assert.isTrue(view.show() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
+  console.log(view.show())
+  assert.isTrue(view.show() === "<ul><li><div>Favourite food: pest</div></li><li><div>Favourite drink: sel</div></li></ul>")
 }
 
 testNoteListView()
+
+function testshowing20characters() {
+  var list = new Notelist();
+  list.addnote(new Note("Hello there - Obiwan"));
+  list.addnote(new Note("General Kenobi! - General Grevious"));
+  var view = new NoteListView(list)
+  assert.isTrue(view.show() === "<ul><li><div>Hello there - Obiwan</div></li><li><div>General Kenobi! - Ge</div></li></ul>")
+}
+
+testshowing20characters()
+
 
