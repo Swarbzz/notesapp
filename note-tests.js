@@ -45,4 +45,11 @@ function testshowing20characters() {
 
 testshowing20characters()
 
-
+function testgetnoteID() {
+  var list = new Notelist();
+  list.addnote(new Note("Favourite food: pesto"))
+  list.addnote(new Note("Favourite drink: seltzer"))
+  assert.isTrue(list.getNoteByID("Favourite food: pesto") === 0)
+  assert.isTrue(list.getNoteByID("Favourite drink: seltzer") === 1)
+}
+testgetnoteID() 

@@ -7,8 +7,8 @@
         this.notes.push(text);
     }
 
-    Notelist.prototype.getnotes = function() {
-        return this.notes
+    Notelist.prototype.getNoteByID = function(text) {
+        return this.notes.map(note => note.text).indexOf(text)
     }
 
     exports.Notelist = Notelist;
