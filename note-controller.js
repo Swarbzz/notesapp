@@ -29,5 +29,25 @@
         return (location.hash.split("#")[1])
     }
 
+    NoteController.prototype.createNote = function() {
+        var list = this.list
+        window.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var newNote = document.getElementById("createnote").value
+            list.addnote(newNote)
+            updateList(list);
+            textAreaReset();
+        })
+        console.log(this.list)
+    }
+    function updateList(list) {
+        document.getElementById('note').innerHTML = new NoteListView(list).show();
+    }
+
+    function textAreaReset() {
+        document.getElementById('createnote').value = ""
+    }
+
+
     exports.NoteController = NoteController
 })(this);
