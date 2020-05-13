@@ -3,7 +3,7 @@
 (function (exports) {
     function NoteController() {
         this.list = new Notelist();
-        this.list.addnote("My favourite drink is the blood of innocents")
+        this.list.addnote("I need to re-write my CV so it is more readable")
         this.list.addnote("Jara is a Spanish lady of yore")
         this.list.addnote("George cannot pretend to be competent at much")
         this.view = new NoteListView(this.list)
